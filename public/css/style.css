@@ -45,6 +45,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -200,6 +202,8 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  max-width: 100%;
+        max-height: 100%;
 }
 
 svg {
@@ -9853,7 +9857,7 @@ h6,
 }
 
 .page-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/page-header.jpg), no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/cat-6.jpg), no-repeat center center;
   background-size: cover;
 }
 
@@ -9904,9 +9908,7 @@ h6,
 }
 
 .testimonial-carousel .owl-item img {
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
+
 }
 
 .testimonial-carousel .owl-dots {

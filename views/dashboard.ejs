@@ -112,38 +112,35 @@
 
               <table id="" class="table">
                 <tbody>
+
+                  <% if(nArticle<5){%>
+                    <% for(var i=( nArticle-1); i>=0; i--){ %>
                   <tr>
-                    <td>Zhotos Multipurpose Cooperative Society, Dimapur, Nagaland</td>
+                    <td><a href="/article/<%=articles[i].title%>"> <%=articles[i].title%> </a></td>
                     <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    <form class="" action="/articles/<%=articles[i].title%>" method="post">
+                      <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    </form>
                   </tr>
-                  <tr>
-                    <td>Hi-tech Bamboo Nursery at Mokokchung</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Hi-tech Nursery at Muirei, Manipur</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
+
+                  <% }%>
+                  <% }else{ %>
+                  <% for(var i=( nArticle-1); i>=nArticle-5; i--){ %>
+                    <tr>
+                      <td><a href="/article/<%=articles[i].title%>"> <%=articles[i].title%> </a></td>
+                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
+                      <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    </tr>
+
+                <% } }%>
+
                 </tbody>
               </table>
 
             </div>
             <hr>
             <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2" onclick="location.href='/dashboard/article';">View All Article</button>
-            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">ADD New Article</button>
+            <a href="/dashboard/create-article"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">ADD New Article</button></a>
 
 
             <div class="">
@@ -151,74 +148,85 @@
 
               <table id="" class="table">
                 <tbody>
+
+                  <% if(nTender<5){%>
+                    <% for(var i=( nTender-1); i>=0; i--){ %>
                   <tr>
-                    <td>Zhotos Multipurpose Cooperative Society, Dimapur, Nagaland</td>
+                    <td><a href="/tenders/<%=tenders[i].title%>"> <%=tenders[i].title%> </a></td>
                     <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    <form class="" action="/tenders/<%= tenders[i].title%>?_DELETE" method="post">
+                      <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+
+                    </form>
                   </tr>
-                  <tr>
-                    <td>Hi-tech Bamboo Nursery at Mokokchung</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Hi-tech Nursery at Muirei, Manipur</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
+                  <% }%>
+                  <% }else{ %>
+                  <% for(var i=( nTender-1); i>=nTender-5; i--){ %>
+                    <tr>
+                      <td><a href="/tenders/<%=tenders[i].title%>"> <%=tenders[i].title%> </a></td>
+                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
+                      <form class="" action="/tenders/<%= tenders[i].title%>?_DELETE" method="post">
+                        <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+
+                      </form>
+                    </tr>
+                    <% } }%>
+
                 </tbody>
+
               </table>
+
 
             </div>
             <hr>
-            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View All Tenders</button>
+            <a href="/dashboard/tenders" class="p-0"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
+
+            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">View All Tenders</button>
 
             <div class="">
               <h3 class="pb-4 mt-4 pt-4">Recent Projects</h3>
 
               <table id="" class="table">
                 <tbody>
+
+                  <% if(nProject<5){%>
+                    <% for(var i=( nProject-1); i>=0; i--){ %>
                   <tr>
-                    <td>Zhotos Multipurpose Cooperative Society, Dimapur, Nagaland</td>
+                    <td><a href="/projects/<%=projects[i].title%>"> <%=projects[i].title%> </a></td>
+
                     <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+
+                    <form class="control-group" action="/projects/<%=projects[i].title%>?_method=DELETE" method="post">
+
+                        <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2 "><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+
+                      </a>
+
+                    </form>
                   </tr>
-                  <tr>
-                    <td>Hi-tech Bamboo Nursery at Mokokchung</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Hi-tech Nursery at Muirei, Manipur</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
-                  <tr>
-                    <td>Bamboo Treatment Plant, KVK, Piprakothi, Bihar</td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                  </tr>
+                  <% }%>
+                  <% }else{ %>
+                  <% for(var i=( nProject-1); i>=nTender-5; i--){ %>
+                    <tr>
+                      <td>  <a href="/projects/<%= projects[i].title%>"><%= projects[i].title%></a></td>
+                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
+                      <form class="control-group" action="/projects/<%=projects[i].title%>?_method=DELETE" method="post">
+                        <a href="/projects/<%=projects[i].title%>?_method=DELETE">
+                          <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                        </a>
+
+                      </form>
+                    </tr>
+                    <% } }%>
+
                 </tbody>
               </table>
 
             </div>
             <hr>
-            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View All Projects</button>
+            <a href="/dashboard/create-project"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
+
+            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">View All Projects</button>
 
           </div>
 
