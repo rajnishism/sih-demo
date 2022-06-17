@@ -85,11 +85,12 @@
               <a href="img/about.jpg" class="nav-item nav-link dropdown-item">Contact</a>
             </div>
             <div class="">
-              <form action="">
+              <form action="/search" method="post">
                 <div class="input-group">
-                  <input type="text" class="form-control form-control-lg" placeholder="Search">
+                  <input type="text" class="form-control form-control-lg" placeholder="Search" name="searchInput">
                   <div class="input-group-append">
-                    <span class="input-group-text bg-transparent text-primary"><i class="fa fa-search"></i></span>
+                    <button type="submit" name="button" class="btn btn-primary bg-primary"> <i class="fa fa-search"></i>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -239,27 +240,30 @@
 
           <div class="owl-carousel owl-theme  ">
             <%for(var i=0; i< nProject; i++){%>
-              <div class="item " >
-                <div class=" text-center team mb-4">
-                  <div class="team-item rounded overflow-hidden mb-2">
-                    <div class="team-img position-relative">
-                      <img class="img-fluid" src="/img/<%=recentProject[i].imglink[0]%>" alt="">
+            <div class="item ">
+              <div class=" text-center team mb-4">
+                <div class="team-item rounded overflow-hidden mb-2">
+                  <div class="team-img position-relative">
+                    <img class="img-fluid" src="/img/<%=recentProject[i].imglink[0]%>" alt="">
 
-                    </div>
-                    <div class="bg-secondary p-4">
+                  </div>
+                  <div class="bg-secondary p-4">
 
-                      <li class="d-flex justify-content-between align-items-center px-0">
-                          <a href="/projects/<%= recentProject[i].title %>" class="text-decoration-none h5 m-0"><%= recentProject[i].title %></a>
-                      </li>
-                    </div>
+                    <li class="d-flex justify-content-between align-items-center px-0">
+                      <a href="/projects/<%= recentProject[i].title %>" class="text-decoration-none h5 m-0"><%= recentProject[i].title %></a>
+                    </li>
                   </div>
                 </div>
               </div>
+            </div>
             <%}%>
 
 
 
 
+          </div>
+          <div class="text-center">
+            <a href="/projects" class="  btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View All Projects</a>
           </div>
         </div>
       </div>
@@ -283,7 +287,7 @@
         <div class="col-md-6 col-lg-3 text-center team mb-4">
           <div class="team-item rounded overflow-hidden mb-2">
             <div class="team-img position-relative">
-              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/promotion.jpg" alt="">
+              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/consultancy.jpg" alt="">
 
             </div>
             <div class="bg-secondary p-4">
@@ -307,7 +311,7 @@
         <div class="col-md-6 col-lg-3 text-center team mb-4">
           <div class="team-item rounded overflow-hidden mb-2">
             <div class="team-img position-relative">
-              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/promotion.jpg" alt="">
+              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/training.jpg" alt="">
 
             </div>
             <div class="bg-secondary p-4">
@@ -319,7 +323,7 @@
         <div class="col-md-6 col-lg-3 text-center team mb-4">
           <div class="team-item rounded overflow-hidden mb-2">
             <div class="team-img position-relative">
-              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/promotion.jpg" alt="">
+              <img class="img-fluid" src="https://necbdc.org.in/sites/default/files/imageblock/networking.jpg" alt="">
 
             </div>
             <div class="bg-secondary p-4">
@@ -329,6 +333,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
   <hr>
@@ -354,18 +359,23 @@
             </div>
             <div class="text-center">
               <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-              <h4 class="font-weight-normal mb-4">Indeed educative and the service rendered by the CBTC would go a long way in revolutionising Bamboo & Cane industry in the North East India and country at large.</h4>
-              <h5 class="m-0">Dr S.N. Hegde</h5>
-              <span>Director, State Forests Research Institute (SFRI), Itanagar, Arunachal Pradesh</span>
+              <h4 class="font-weight-normal mb-4">I take it as a privilege to see the exquisite designs of bamboo boards which I think is the first of its kind in the country. I praise the designers wholeheartedly. I wish them the best of the best in future in their endeavor to building an era of bamboo</h4>
+              <h5 class="m-0 font-weight-bold ">G Malawm Dawngliana</h5>
+              <br>
+              <span>Joint Director, Directorate of Industries, <br>Government of Mizoram, Aizawl</span>
             </div>
             <div class="text-center">
               <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-              <h4 class="font-weight-normal mb-4">Indeed educative and the service rendered by the CBTC would go a long way in revolutionising Bamboo & Cane industry in the North East India and country at large.</h4>
-              <h5 class="m-0">Dr S.N. Hegde</h5>
-              <span>Director, State Forests Research Institute (SFRI), Itanagar, Arunachal Pradesh</span>
+              <h4 class="font-weight-normal mb-4">It is unbelievable, wonderful magic of bamboo. If the technology is introduced in the Northeast, it will be a grooved success.</h4>
+              <h5 class="m-0 font-weight-bold ">H. Goswami,</h5>
+              <br>
+              <span> Deputy Resident Commissioner, <br>Government of Manipur, Guwahati</span>
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center m-4 pt-4">
+        <a href="/feedBack" class="  btn btn-primary  bg-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Read More</a>
       </div>
     </div>
   </div>
@@ -415,6 +425,8 @@
 
     });
   </script>
+
+  
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>

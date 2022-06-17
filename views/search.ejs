@@ -22,7 +22,7 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,7 +55,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="/ " class="nav-item nav-link active">Home</a>
+                            <a href=" / " class="nav-item nav-link active">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About CBTC</a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -119,74 +119,68 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="mb-5">
+                        <%if(sArticle || sProjects || sTender){%>
+                        <h1 class="mb-5">Search Result for "<%=searchInput%>"</h1>
+                        <div class="">
+                          <% if(sProjects!=0){%>
+                          <h2 class="mb-5">Projects -<%=sProjects%></h2>
+                          <div class="row owl-carousel">
 
-                        <h1 class="mb-5">CBTC Staff</h1>
-                        <!-- Team Start -->
-
-
-                                <div class="text-center mb-5">
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-4 text-center team mb-4">
-                                        <div class="team-item rounded overflow-hidden mb-2">
-                                            <div class="team-img position-relative">
-                                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-
+                              <% for(var i=sProjects-1; i>=0 ; i--){%>
+                                <div class="col-lg-6 col-md-6 mb-4 ">
+                                    <div class="rounded overflow-hidden mb-2">
+                                        <img class="img-fluid" src="/img/<%= projects[i].imglink[0]%>" alt="">
+                                        <div class="bg-secondary p-4">
+                                            <div class="d-flex justify-content-between mb-3">
                                             </div>
-                                            <div class="bg-secondary p-4">
-                                                <h5>Dr. Shailendra Chaudhari</h5>
-                                                <p class="m-0">	Managing Director</p>
-                                            </div>
+                                            <a class="h5" href="/projects/<%= projects[i].title %>"><%= projects[i].title %></a>
+
                                         </div>
                                     </div>
-
-                                    <div class="col-md-6 col-lg-4 text-center team mb-4">
-                                        <div class="team-item rounded overflow-hidden mb-2">
-                                            <div class="team-img position-relative">
-                                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-
-                                            </div>
-                                            <div class="bg-secondary p-4">
-                                                <h5>Mr. H. Priyokumar Singh</h5>
-                                                <p class="m-0">	Manager (Training)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-lg-4 text-center team mb-4">
-                                        <div class="team-item rounded overflow-hidden mb-2">
-                                            <div class="team-img position-relative">
-                                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-
-                                            </div>
-                                            <div class="bg-secondary p-4">
-                                                <h5>Mr. Anjal Goswami</h5>
-                                                <p class="m-0">Manager (Bamboo Housing & Construction)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-lg-4 text-center team mb-4">
-                                        <div class="team-item rounded overflow-hidden mb-2">
-                                            <div class="team-img position-relative">
-                                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-
-                                            </div>
-                                            <div class="bg-secondary p-4">
-                                                <h5>Mr. Anil Ch. Das</h5>
-                                                <p class="m-0">Dy. Manager  (Accounts)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 </div>
 
+                              <%}%>
 
-                        <!-- Team End -->
 
+                          </div>
+                          <hr>
+                          <%}%>
+
+                          <% if(sArticle!=0){%>
+                          <h2 class="mb-5">Articles - <%=sArticle%> </h2>
+                          <div class="mb-5 row ">
+                            <% for(var i=sArticle-1; i>=0; i--){%>
+                                <div class="col-lg-4 pr-0 mr-5 mb-5">
+                                  <h2 ><%= articles[i].title%></h2>
+                                  <p><%= articles[i].title%><a  href="/article/<%= articles[i].title%>">Read More </a>
+                                </div>
+                            <%}%>
+                          </div>
+                          <hr>
+                          <%}%>
+
+                          <% if(sTender!=0){%>
+                          <h2 class="mb-5">Tenders -<%=sTender%></h2>
+                          <div class="mb-5 row ">
+                            <% for(var i=nTender-1; i>=0; i--){%>
+                                <div class="col-lg-4 pr-0 mr-5 mb-5">
+                                  <h2 ><%= tenders[i].title%></h2>
+                                  <p><%= tenders[i].title%><a  href="/tender/<%= tenders[i].title%>">Read More </a>
+                                </div>
+                            <%}%>
+                          </div>
+                          <hr>
+                          <%}%>
+                        </div>
+                        <%}else{%>
+
+                        <div class="">
+                          <h1>No Result Found For- "<%=searchInput%>"</h1>
+                          <img src="https://thumbs.gfycat.com/BronzeClearcutAlaskanhusky-size_restricted.gif" alt="">
+                        </div>
+                      <%}%>
                     </div>
+
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">

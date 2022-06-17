@@ -255,7 +255,18 @@ app.get('/rti',(req,res)=>{
 })
 
 app.get('/staff',(req,res)=>{
-  res.render('staff',{});
+  Tender.find({},(err,recentTender)=>{
+    Article.find({}, (err, recentArticle)=>{
+      res.render('staff',{
+        nArticle: recentArticle.length,
+        nTender: recentTender.length,
+        recentTender: recentTender,
+        recentArticle: recentArticle,
+
+
+      })
+    })
+  })
 
 })
 
@@ -509,7 +520,7 @@ app.get('/feedback',(req, res)=>{
   Tender.find({}, (err, recentTender)=>{
     Article.find({}, (err, recentArticle)=>{
 
-      res.render('resources',{ recentTender: recentTender , recentArticle:recentArticle,  nArticle: recentArticle.length, nTender:recentTender.length, })
+      res.render('feedback',{ recentTender: recentTender , recentArticle:recentArticle,  nArticle: recentArticle.length, nTender:recentTender.length, })
 
     })
 
@@ -518,6 +529,49 @@ app.get('/feedback',(req, res)=>{
   )
 })
 
+
+// search features
+app.post('/search',(req, res)=>{
+  var input= req.body.searchInput;
+  res.redirect(`/search/${input}`);
+})
+
+app.get('/search/:input',(req,res)=>{
+  var input= req.params.input;
+  console.log(input);
+  Project.find({$or: [{title:{$regex: input ,$options:'$i'}},{body:{$regex: input ,$options:'$i'}}]}, (err,projects)=>{
+    Article.find({$or: [{title:{$regex: input ,$options:'$i'}},{body:{$regex: input ,$options:'$i'}}]},(err,articles)=>{
+      Tender.find({$or: [{title:{$regex: input ,$options:'$i'}},{body:{$regex: input ,$options:'$i'}}]}, (err, tenders)=>{
+        Tender.find({}, (err, recentTender)=>{
+          Article.find({}, (err, recentArticle)=>{
+            Project.find({}, (err, recentProject)=>{
+              res.render('search',
+              {
+                projects: projects,
+                tenders: tenders,
+                articles: articles,
+                sArticle: articles.length,
+                sProjects: projects.length,
+                sTender: tenders.length,
+                recentTender:recentTender,
+                recentArticle:recentArticle,
+                recentProject:recentProject,
+                searchInput: input,
+                nArticle:recentArticle.length,
+                nProjects:recentProject.length,
+                nTender: recentTender.length,
+              });
+            })
+
+          })
+
+
+          }
+        )
+      })
+    })
+  })
+})
 
 //PORT
 const PORT = process.env.PORT || 3000;
