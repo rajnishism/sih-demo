@@ -241,10 +241,10 @@
           <div class="owl-carousel owl-theme  ">
             <%for(var i=0; i< nProject; i++){%>
             <div class="item ">
-              <div class=" text-center team mb-4">
+              <div class=" text-center team mb-4  team mb-4">
                 <div class="team-item rounded overflow-hidden mb-2">
-                  <div class="team-img position-relative">
-                    <img class="img-fluid" src="/img/<%=recentProject[i].imglink[0]%>" alt="">
+                  <div class=" position-relative">
+                    <img class="" src="/img/<%=recentProject[i].imglink[0]%>" alt="">
 
                   </div>
                   <div class="bg-secondary p-4">
@@ -383,26 +383,98 @@
 
   <hr>
   <!-- Footer Start -->
-  <div class="container-fluid  text-black py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+  <div class="container-fluid  text-black py-5 px-sm-3 px-lg-5" style="">
     <div class="row ">
-      <div class="col-lg-7 col-md-12">
-        <div class="row">
-          <div class="col-md-6 ">
-            <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
-            <h6><i class="fa fa-map-marker-alt mr-2"></i>13th Mile, G.S. Road, Burnihat 781023, Assam</h6>
-            <h6><i class="fa fa-phone-alt mr-2"></i> <a href=""> Please check the list of contacts here.</a></h6>
-            <h6><i class="fa fa-envelope mr-2"></i> cbtcassam@gmail.com</h6>
+      <div class="col-lg-6 col-md-12">
+        <div class="">
+          <div class="col-md-12">
+            <h1>North East Cane and Bamboo <br> Development Council </h1>
+          </div>
+          <br>
+          <div class="col-md-12 mt-4  ">
+            <h5>
+              <div class="d-inline color-primary" >
+                <i class="fa fa-map-marker-alt mr-2 text-primary"></i>
+              </div>
+
+              <div class="d-inline">
+                13th Mile, G.S. Road, Burnihat 781023, Assam
+              </div>
+            </h5>
+            <h5><i class="fa fa-phone-alt mr-2 text-primary"></i> <a href=""> Please check the list of contacts here.</a></h5>
+            <h5><i class="fa fa-envelope mr-2 text-primary"></i> cbtcassam@gmail.com</h5>
+            <div class=" pt-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="">
+          <!-- Facebook -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #3b5998;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-facebook-f"></i
+            ></a>
+
+          <!-- Twitter -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #55acee;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-twitter"></i
+            ></a>
+
+          <!-- Google -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #dd4b39;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-google"></i
+            ></a>
+
+          <!-- Instagram -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #ac2bac;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-instagram"></i
+            ></a>
+
+          <!-- Linkedin -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #0082ca;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-linkedin-in"></i
+            ></a>
+          <!-- Github -->
+          <a
+             class="btn btn-primary btn-floating m-1"
+             style="background-color: #333333;"
+             href="#!"
+             role="button"
+             ><i class="fab fa-github"></i
+            ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
 
           </div>
 
         </div>
       </div>
-      <div class="col-lg-5 col-md-12 mb-5">
-        <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Sponsored by</h5>
-        <img src="https://necbdc.org.in/sites/default/files/mdoner.jpg" alt="" class="pb-5">
-        <br>
-        <img src="https://necbdc.org.in/sites/default/files/nec_0.jpg" alt="" class="pb-5">
+      <div class="col-lg-6 col-md-12 mb-5 ">
+        <div class="p-4">
+          <h5 class="center text-uppercase mb-4 font-weight-bold ml-1 text-left" style="letter-spacing: 5px;">Sponsored by</h5>
+          <img src="https://necbdc.org.in/sites/default/files/mdoner.jpg" alt="" class="pb-5 col-md-12 col-lg-10">
+          <br>
+          <img src="https://necbdc.org.in/sites/default/files/nec_0.jpg" alt="" class="pb-5 col-md-12 col-lg-8">
 
+
+        </div>
 
       </div>
     </div>
@@ -418,7 +490,7 @@
         items: 3,
         margin: 10,
         loop: true,
-        nav:false,
+        nav:true,
         dots: true,
 
       });
@@ -426,7 +498,7 @@
     });
   </script>
 
-  
+
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>

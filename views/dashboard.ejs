@@ -32,10 +32,12 @@
           <div class="col">
               <a href="" class="text-decoration-none">
                   <h2 class="m-0">North East Cane and Bamboo Development Council (NECBDC)</h2>
-                  <p>UNDER NORTH EASTERN COUNCIL, MINISTRY OF DONER</p>
-              </a>
-          </div>
+                  <p>UNDER NORTH EASTERN COUNCIL, MINISTRY OF DONER</p></a>
 
+          </div>
+          <div class="btn btn-warning text-primary">
+            <a href="/logout">Logout</a>
+          </div>
       </div>
   </div>
   <!-- Topbar End -->
@@ -108,137 +110,129 @@
               <h1 class="title" id="page-title">Welcome To Dashboard</h1>
             </div>
             <div class="">
-              <h3 class="pb-4 mt-4 pt-4">Recent News Articles</h3>
+              <div class="pb-4">
+                <div class="" style="display: inline-block; border-bottom: solid #70AB2C 4px ">
+                  <h3 class="  mt-4 pt-4 ">Recent News Articles</h3>
 
-              <table id="" class="table">
-                <tbody>
+                </div>
+              </div>
 
-                  <% if(nArticle<5){%>
-                    <% for(var i=( nArticle-1); i>=0; i--){ %>
+
+
+              <div class="">
+                <table class="table  table-striped dark">
+                  <th >S.no</th>
+                  <th>title</th>
+
+                  <th>Edit  <i class="fas fa-edit"></i></th>
+                  <th> Delete   <i class="fa fa-trash" aria-hidden="true"></i></th>
+
+                  <%  for(var i=0; i< nArticle ; i++){ %>
                   <tr>
-                    <td><a href="/article/<%=articles[i].title%>"> <%=articles[i].title%> </a></td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <form class="" action="/articles/<%=articles[i].title%>" method="post">
-                      <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    <td> <b><%=i+1 %>.</b> </td>
+                    <td> <%=articles[i].title%></td>
+
+
+                    <td class="center"><a href="/article/<%=articles[i].title%>/edit" class="btn-primary btn">Edit</a> </td>
+                    <form class="" action="/article/<%=articles[i].title%>" method="post">
+                      <td class="center"><button  type="submit" href="#" class="btn-danger btn">Delete</button> </td>
                     </form>
+
+
                   </tr>
-
-                  <% }%>
-                  <% }else{ %>
-                  <% for(var i=( nArticle-1); i>=nArticle-5; i--){ %>
-                    <tr>
-                      <td><a href="/article/<%=articles[i].title%>"> <%=articles[i].title%> </a></td>
-                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                      <td><button type="button" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                    </tr>
-
-                <% } }%>
-
-                </tbody>
-              </table>
+                  <%  }%>
+                </table>
+              </div>
 
             </div>
             <hr>
             <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2" onclick="location.href='/dashboard/article';">View All Article</button>
             <a href="/dashboard/create-article"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">ADD New Article</button></a>
-
-
             <div class="">
-              <h3 class="pb-4 mt-4 pt-4">Recent Tenders</h3>
+              <div class="pb-4">
+                <div class="" style="display: inline-block; border-bottom: solid #70AB2C 4px ">
+                  <h3 class="  mt-4 pt-4 ">Recent  Projects</h3>
 
-              <table id="" class="table">
-                <tbody>
+                </div>
+              </div>
+              <div class="">
+                <table class="table  table-striped dark">
+                  <th >S.no</th>
+                  <th>title</th>
 
-                  <% if(nTender<5){%>
-                    <% for(var i=( nTender-1); i>=0; i--){ %>
+                  <th>Edit  <i class="fas fa-edit"></i></th>
+                  <th> Delete   <i class="fa fa-trash" aria-hidden="true"></i></th>
+
+                  <%  for(var i=0; i< nProject ; i++){ %>
                   <tr>
-                    <td><a href="/tenders/<%=tenders[i].title%>"> <%=tenders[i].title%> </a></td>
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                    <form class="" action="/tenders/<%= tenders[i].title%>?_DELETE" method="post">
-                      <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                    <td> <b><%=i+1 %>.</b> </td>
+                    <td> <%=projects[i].title%></td>
 
+
+                    <td class="center"><a href="/projects/<%=projects[i].title%>/edit" class="btn-primary btn">Edit</a> </td>
+                    <form class="" action="/projects/<%=projects[i].title%>" method="post">
+                      <td class="center"><button  type="submit" href="#" class="btn-danger btn">Delete</button> </td>
                     </form>
+
+
                   </tr>
-                  <% }%>
-                  <% }else{ %>
-                  <% for(var i=( nTender-1); i>=nTender-5; i--){ %>
-                    <tr>
-                      <td><a href="/tenders/<%=tenders[i].title%>"> <%=tenders[i].title%> </a></td>
-                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                      <form class="" action="/tenders/<%= tenders[i].title%>?_DELETE" method="post">
-                        <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+                  <%  }%>
+                </table>
+              </div>
+              <hr>
+              <a href="/dashboard/create-project" class="p-0"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
 
-                      </form>
-                    </tr>
-                    <% } }%>
-
-                </tbody>
-
-              </table>
-
+              <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4" onclick="location.href='/dashboard/projects';">View All Projects</button>
 
             </div>
-            <hr>
-            <a href="/dashboard/tenders" class="p-0"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
-
-            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">View All Tenders</button>
-
             <div class="">
-              <h3 class="pb-4 mt-4 pt-4">Recent Projects</h3>
+              <div class="pb-4">
+                <div class="" style="display: inline-block; border-bottom: solid #70AB2C 4px ">
+                  <h3 class="  mt-4 pt-4 ">Recent  Tender</h3>
 
-              <table id="" class="table">
-                <tbody>
+                </div>
+              </div>
+              <div class="">
+                <table class="table  table-striped dark">
+                  <th >S.no</th>
+                  <th>title</th>
 
-                  <% if(nProject<5){%>
-                    <% for(var i=( nProject-1); i>=0; i--){ %>
+                  <th>Edit  <i class="fas fa-edit"></i></th>
+                  <th> Delete   <i class="fa fa-trash" aria-hidden="true"></i></th>
+
+                  <%  for(var i=0; i< nTender ; i++){ %>
                   <tr>
-                    <td><a href="/projects/<%=projects[i].title%>"> <%=projects[i].title%> </a></td>
+                    <td> <b><%=i+1 %>.</b> </td>
+                    <td> <%=tenders[i].title%></td>
 
-                    <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
 
-                    <form class="control-group" action="/projects/<%=projects[i].title%>?_method=DELETE" method="post">
-
-                        <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2 "><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-
-                      </a>
-
+                    <td class="center"><a href="/tenders/<%=tenders[i].title%>/edit" class="btn-primary btn">Edit</a> </td>
+                    <form class="" action="/tenders/<%=tenders[i].title%>" method="post">
+                      <td class="center"><button  type="submit" href="#" class="btn-danger btn">Delete</button> </td>
                     </form>
+
+
                   </tr>
-                  <% }%>
-                  <% }else{ %>
-                  <% for(var i=( nProject-1); i>=nTender-5; i--){ %>
-                    <tr>
-                      <td>  <a href="/projects/<%= projects[i].title%>"><%= projects[i].title%></a></td>
-                      <td> <button type="button" name="button" class="btn btn-success py-md-2 px-md-4 font-weight-semi-bold mt-2">  <i class="fa-solid fa-pen-to-square"></i>Edit</button></td>
-                      <form class="control-group" action="/projects/<%=projects[i].title%>?_method=DELETE" method="post">
-                        <a href="/projects/<%=projects[i].title%>?_method=DELETE">
-                          <td><button type="submit" name="button" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold mt-2"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
-                        </a>
+                  <%  }%>
+                </table>
+              </div>
+              <hr>
+              <a href="/dashboard/create-project" class="p-0"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
 
-                      </form>
-                    </tr>
-                    <% } }%>
-
-                </tbody>
-              </table>
+              <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4" onclick="location.href='/dashboard/projects';">View All Projects</button>
 
             </div>
-            <hr>
-            <a href="/dashboard/create-project"><button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ">ADD New Article</button></a>
 
-            <button type="button" name="button" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 ml-4">View All Projects</button>
+
+
+
+
 
           </div>
 
         </div>
 
-        <div class="col-lg-4 mt-5 mt-lg-0">
 
-
-
-
-
-        </div>
       </div>
     </div>
   </div>
